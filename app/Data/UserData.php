@@ -10,7 +10,7 @@ use Spatie\LaravelData\Data;
 final class UserData extends Data
 {
     public function __construct(
-        public readonly ?int $id,
+        public readonly ?string $id,
         public readonly string $name,
         public readonly string $email,
         public readonly ?CarbonInterface $email_verified_at,

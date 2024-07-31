@@ -13,8 +13,8 @@ const toggleDark = useToggle(isDark)
       ></v-btn>
     </v-app-bar>
 
-    <v-main class="px-5">
-      <v-container :fluid="true">
+    <v-main class="px-5 mt-4">
+      <v-container fluid>
         <slot />
       </v-container>
     </v-main>

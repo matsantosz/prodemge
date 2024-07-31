@@ -1,5 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  people: UnwrappedPaginator<App.Data.PersonData>
+}>()
+</script>
 
 <template layout>
-  <div>Hey</div>
+  <div>
+    <people-search />
+    <people-table :people="people" />
+  </div>
 </template>
