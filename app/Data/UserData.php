@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Data;
 
 use Carbon\CarbonInterface;
@@ -12,6 +14,5 @@ final class UserData extends Data
         public readonly string $name,
         public readonly string $email,
         public readonly ?CarbonInterface $email_verified_at,
-    ) {
-    }
+    ) {}
 }

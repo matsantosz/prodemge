@@ -55,8 +55,7 @@
     "prefer-stable": true,
     "scripts": {
         "test": "pest",
-        "lint": "php-cs-fixer fix --allow-risky=yes --dry-run",
-        "lint:fix": "php-cs-fixer fix --allow-risky=yes",
+        "lint": "pint",
         "post-update-cmd": "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
         "post-root-package-install": "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
         "post-autoload-dump": [
