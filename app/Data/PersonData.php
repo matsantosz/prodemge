@@ -17,7 +17,7 @@ final class PersonData extends Data
         public readonly string $motherName,
         public readonly string $phoneNumber,
         public readonly string $email,
-        public readonly AddressData $address,
+        public readonly ?AddressData $address,
     ) {}
 
     public static function rules($context): array

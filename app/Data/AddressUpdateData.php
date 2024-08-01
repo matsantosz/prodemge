@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Data;
 
-use App\Enums\Address\Type;
 use Spatie\LaravelData\Data;
 
 final class AddressUpdateData extends Data
@@ -12,7 +11,7 @@ final class AddressUpdateData extends Data
     public function __construct(
         public readonly ?string $id,
         public readonly string $personId,
-        public readonly Type $type,
+        public readonly string $type,
         public readonly string $zip_code,
         public readonly string $street,
         public readonly string $number,

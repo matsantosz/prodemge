@@ -76,68 +76,74 @@ const tab = ref('info')
       </v-tabs-window-item>
 
       <v-tabs-window-item value="address">
-        <edit-address-modal :address="item.address" />
+        <template v-if="item.address">
+          <edit-address-modal :address="item.address" />
+        </template>
+        <template v-else>
+          <create-address-modal :personId="item.id" />
+        </template>
+
         <v-row no-gutters class="px-4">
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">Tipo de Endereço</div>
-            <p class="text-body-1" v-if="item.address.type">
-              {{ item.address.type }}
+            <p class="text-body-1" v-if="item.address?.type">
+              {{ item.address?.type }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
 
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">CEP</div>
-            <p class="text-body-1" v-if="item.address.zip_code">
-              {{ item.address.zip_code }}
+            <p class="text-body-1" v-if="item.address?.zip_code">
+              {{ item.address?.zip_code }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
 
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">Logradouro</div>
-            <p class="text-body-1" v-if="item.address.street">
-              {{ item.address.street }}
+            <p class="text-body-1" v-if="item.address?.street">
+              {{ item.address?.street }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
 
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">Número</div>
-            <p class="text-body-1" v-if="item.address.number">
-              {{ item.address.number }}
+            <p class="text-body-1" v-if="item.address?.number">
+              {{ item.address?.number }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
 
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">Complemento</div>
-            <p class="text-body-1" v-if="item.address.additional">
-              {{ item.address.additional }}
+            <p class="text-body-1" v-if="item.address?.additional">
+              {{ item.address?.additional }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
 
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">Bairro</div>
-            <p class="text-body-1" v-if="item.address.neighborhood">
-              {{ item.address.neighborhood }}
+            <p class="text-body-1" v-if="item.address?.neighborhood">
+              {{ item.address?.neighborhood }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
 
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">Cidade</div>
-            <p class="text-body-1" v-if="item.address.city">
-              {{ item.address.city }}
+            <p class="text-body-1" v-if="item.address?.city">
+              {{ item.address?.city }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
 
           <v-col cols="12" md="6" lg="4">
             <div class="text-body-1 text-disabled">Estado</div>
-            <p class="text-body-1" v-if="item.address.state">
-              {{ item.address.state }}
+            <p class="text-body-1" v-if="item.address?.state">
+              {{ item.address?.state }}
             </p>
             <p class="text-body-1 text-disabled" v-else>-</p>
           </v-col>
