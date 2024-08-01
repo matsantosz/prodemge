@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace App\Data;
 
-use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
-use Spatie\LaravelData\Mappers\SnakeCaseMapper;
-use Spatie\LaravelData\Support\Validation\ValidationContext;
 
 final class PersonData extends Data
 {
@@ -22,7 +19,7 @@ final class PersonData extends Data
         public readonly string $email,
     ) {}
 
-    public static function rules(ValidationContext $context): array
+    public static function rules($context): array
     {
         return [
             'name'        => ['required', 'string', 'min:2', 'max:255'],
@@ -32,6 +29,17 @@ final class PersonData extends Data
             'motherName'  => ['required', 'string', 'min:2', 'max:255'],
             'phoneNumber' => ['required', 'string', 'size:15'],
             'email'       => ['required', 'string', 'email', 'max:255', 'unique:people,email'],
+        ];
+    }
+
+    public static function attributes(...$args): array
+    {
+        return [
+            'name'        => 'nome',
+            'socialName'  => 'nome social',
+            'fatherName'  => 'nome do pai',
+            'motherName'  => 'nome da mãe',
+            'phoneNumber' => 'telefone',
         ];
     }
 

@@ -16,13 +16,6 @@ use Illuminate\Support\ServiceProvider;
 
 final class AppServiceProvider extends ServiceProvider
 {
-    public function register(): void
-    {
-        $this->app->singleton(\Faker\Generator::class, function () {
-            return \Faker\Factory::create('pt_BR');
-        });
-    }
-
     public function boot(): void
     {
         HtmlDumper::dontIncludeSource();
