@@ -19,6 +19,7 @@ final class IndexController
         return hybridly('home', [
             'people' => PersonData::collect(
                 $people->search($search)
+                    ->latest()
                     ->paginate()
                     ->withQueryString(),
             ),
