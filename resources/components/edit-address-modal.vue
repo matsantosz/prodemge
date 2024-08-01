@@ -71,6 +71,7 @@ const form = useForm({
                 v-model="form.fields.zip_code"
                 :error="!!form.errors.zip_code"
                 :error-messages="form.errors.zip_code"
+                v-mask="['#####-###']"
                 @update:modelValue="form.clearError('zip_code')"
               ></v-text-field>
             </v-col>
