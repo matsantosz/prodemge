@@ -10,7 +10,7 @@ const form = useForm({
   url: route('address.store'),
   fields: {
     person_id: props.personId,
-    type: '',
+    type: 'home',
     zip_code: '',
     street: '',
     number: '',
@@ -67,7 +67,7 @@ const form = useForm({
 
             <v-col cols="12" sm="5">
               <v-text-field
-                label="CEP"
+                label="CEP *"
                 v-model="form.fields.zip_code"
                 :error="!!form.errors.zip_code"
                 :error-messages="form.errors.zip_code"
