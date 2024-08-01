@@ -20,7 +20,7 @@ php artisan serve
 npm run dev
 ```
 
-# Coisas que ficaram faltando
+# Features que não deu tempo de finalizar
 
 - Consulta de CEP
 - Diagrama de Banco de Dados
