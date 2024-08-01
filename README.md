@@ -6,8 +6,8 @@
 # Setup
 
 ```
-git clone git@github.com:matsantosz/progemge.git
-cd progemge
+git clone git@github.com:matsantosz/prodemge.git
+cd prodemge
 composer install
 php artisan key:gen
 php artisan migrate
