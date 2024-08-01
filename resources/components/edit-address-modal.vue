@@ -89,7 +89,6 @@ const form = useForm({
             <v-col cols="12" sm="3">
               <v-text-field
                 label="Número"
-                type="number"
                 v-model="form.fields.number"
                 :error="!!form.errors.number"
                 :error-messages="form.errors.number"
