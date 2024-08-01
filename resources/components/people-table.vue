@@ -3,6 +3,7 @@ const props = defineProps<{
   people: UnwrappedPaginator<App.Data.PersonData>
 }>()
 
+const expanded = ref([])
 const page = ref(props.people.current_page)
 
 const headers = [
@@ -31,8 +32,16 @@ const setCurrentPage = (page: number) => {
       :headers="headers"
       :items="people.data"
       :items-per-page="people.per_page"
+      v-model:expanded="expanded"
+      show-expand
       class="rounded"
     >
+      <template v-slot:expanded-row="{ columns, item }">
+        <td :colspan="columns.length">
+          <person-info :item="item" />
+        </td>
+      </template>
+
       <template v-slot:bottom>
         <div class="pt-2">
           <v-pagination

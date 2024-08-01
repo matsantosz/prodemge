@@ -9,6 +9,7 @@ use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @mixin IdeHelperPerson
@@ -40,5 +41,10 @@ final class Person extends Model
                         ->orWhere('email', 'like', "%{$search}%"),
                 ),
             );
+    }
+
+    public function address(): HasOne
+    {
+        return $this->hasOne(Address::class);
     }
 }
